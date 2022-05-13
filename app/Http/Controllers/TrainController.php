@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class TrainController extends Controller
 {
-    public function index() {
-        return view('guest.home.index');
+    public static function index() {
+        $trains = Train::all();
+        return view('guest.home.index',compact('trains'));
     }
 }
