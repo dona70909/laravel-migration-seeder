@@ -14,5 +14,5 @@ use App\Http\Controllers\TrainController;
 |
 */
 
-Route::get('/',[TrainController::class, 'index']);
+Route::get('/',[TrainController::class, 'index'])->name('home-trains');
 Route::get('/{id}',[TrainController::class, 'show'])->name('train-info');
