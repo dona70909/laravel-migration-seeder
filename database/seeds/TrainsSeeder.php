@@ -15,16 +15,14 @@ class TrainsSeeder extends Seeder
     public function run(Faker $faker)
 
     {
-            for ($i = 0; $i < 10 ; $i++){
+            for ($i = 0; $i < 50 ; $i++){
             $newTrain = new Train();
             $newTrain->azienda = $faker->company();
             $newTrain->stazione_di_partenza = $faker->city();
             $newTrain->stazione_di_arrivo = $faker->city();
 
-            //$startDate = $faker->dateTimeBetween('+0 days', '+2 years');
-
-            $newTrain->data_di_partenza = $faker->dateTimeBetween($startDate = '+0 days', '+1 years');
-            $newTrain->data_di_arrivo = $faker->dateTimeBetween($newTrain->data_di_partenza, $newTrain->data_di_partenza->format('Y-m-d') . '+1 days');
+            $newTrain->data_di_partenza = $faker->dateTimeBetween('+0 days', '1 years');
+            $newTrain->data_di_arrivo = $faker->dateTimeBetween($newTrain->data_di_partenza, $newTrain->data_di_partenza->format('Y-m-d') . '+1 day');
 
             $newTrain->orario_di_partenza = $faker->time();
             $newTrain->orario_di_arrivo =  $faker->time();
