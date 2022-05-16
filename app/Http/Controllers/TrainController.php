@@ -13,4 +13,12 @@ class TrainController extends Controller
 
         return view('guest.home.index',compact('trains'));
     }
+
+    public static function show($id) {
+        //$trains = Train::where('data_di_partenza','=', date('Y-m-d'))->get();
+
+        $train = Train::findOrFail($id);
+
+        return view('guest.home.show',compact('train'));
+    }
 }
