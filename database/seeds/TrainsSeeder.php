@@ -27,7 +27,7 @@ class TrainsSeeder extends Seeder
             $newTrain->data_di_arrivo = $faker->dateTimeBetween($newTrain->data_di_partenza, $newTrain->data_di_partenza->format('Y-m-d') . '+1 days');
 
             $newTrain->orario_di_partenza = $faker->time();
-            $newTrain->orario_di_arrivo = $faker->time();
+            $newTrain->orario_di_arrivo =  $faker->time();
 
             $newTrain->codice_treno = $faker->bothify('???-###');;
             $newTrain->numero_carrozze = $faker->numberBetween(1, 40);
